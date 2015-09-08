@@ -1,0 +1,48 @@
+<body>
+<div class="top">
+    <div class="top_tp">
+        <div class="ch">
+            <a href="javascript:;" class="j">简体中文</a>|
+            <a href="javascript:;" class="f">繁體中文</a>|
+            <a href="javascript:;" class="e">English</a>|
+        </div>
+        <a href="index.html">
+            <img src="__PUBLIC__/images/text——top.png" class="logo" />
+        </a>
+        <div class="srk_index">
+            <form action="__APP__/Index/search" method="get">
+            <img src="__PUBLIC__/images/bg_nav.jpg" />
+            <div class="search_text" id="search_text">
+                <input type="text" name="keyword" class="searchtext" value="请输入关键字" onfocus="if (this.value =='请输入关键字'){this.value ='';this.style.color='#000';}" onblur="if (this.value ==''){this.value='请输入关键字';this.style.color='#cecece'}">
+            </div>
+
+            <div class="search_sub">
+                <input type="submit" class="searsub" value="">
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="nav">
+    <div class="nav_n">
+        <ul>
+            <li class="curr">
+                <a class="no_same" href="__APP__/Index/index">首页<span>/</span></a>
+            </li>
+            <volist name="nav" id="val">
+            <li class="nli">
+                <a class="no_same" href="__APP__/Index/newsinfo/id/{$val.id}">{$val.type}<span>/</span></a>
+                <dl class="sub_n">
+                    <volist name="val['erji']" id="v">
+                    <dt><a href="__APP__/Index/newsinfo/id/{$v.id}">{$v.type}</a></dt>
+                    </volist>
+                </dl>
+            </li>
+            </volist>
+            </dl>
+            </ul>
+    </div>
+</div>
+<div class="clear"></div>
+
+

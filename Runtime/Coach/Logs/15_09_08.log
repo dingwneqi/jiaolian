@@ -1,0 +1,10 @@
+[ 2015-09-08T16:35:11+08:00 ] 0.0.0.0 /jiaolian/coach.php
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000235s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+
+[ 2015-09-08T16:35:22+08:00 ] 0.0.0.0 /jiaolian/coach.php
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000390s ]
+

@@ -1,0 +1,57 @@
+<div class="footer">
+    <div class="fcon">
+        <div class="fleft">
+            <volist name="nav111" id="val">
+                <ul>
+                    <volist name="val" id="v">
+                      <li><a href="__APP__/Index/newsinfo/id/{$v.id}">{$v.type}</a>
+
+                    </volist>
+                    </li>
+                </ul>
+            </volist>
+        </div>
+        <div class="fright">
+            <div style="height: 40px;float: right;"><div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div><script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/__PUBLIC__/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> </div> <p class="tel" style="color:#ffa200;"> <span>400-0098-301</span></p>
+            <p>地址：{$attr.address}</p>
+            <p>电话：{$attr.tel}</p>
+            <p>{$attr.beian}</p>
+        </div>
+    </div>
+</div>
+<div class="main_right_bar" id="fix_right_bar" style="display: none;">
+    <i></i>
+    <div>
+        <a id="live800iconlinkhc" target="_blank" href="javascript:void(0)">
+            <img src="__PUBLIC__/images/201504151713082401.png" width="85px" height="86px">
+        </a>
+    </div>
+    <div>
+        <a href="javascript:;">
+            <img src="__PUBLIC__/images/201504151713086252.png" width="85px" height="86px">
+        </a>
+    </div>
+
+</div>
+<script src="__PUBLIC__/js/jquery-1.11.0.js"></script>
+<script src="__PUBLIC__/js/jquery.SuperSlide.js" type="text/javascript" charset="utf-8"></script>
+<script src="__PUBLIC__/js/index.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(function(){
+        var fixRightBarIsShow = function(){
+            var TopHeight = $(window).scrollTop();
+            if(TopHeight > 120){
+                $("#fix_right_bar").show();
+            }else{
+                $("#fix_right_bar").hide();
+            }
+        }
+        fixRightBarIsShow();
+        $(window).scroll(function(){
+            fixRightBarIsShow();
+        })
+    })
+</script>
+</body>
+
+</html>

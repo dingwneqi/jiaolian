@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{$info.title}</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/stylenav.css" />
+    <script src="__PUBLIC__/js/jquery-1.11.0.js"></script>
+</head>
+<body>
+<div class="logo_box">
+    <a href="javascript:;">
+        <img src="__PUBLIC__/images/logo.png" />
+    </a>
+</div>
+<div class="nav_box" id="nav">
+    <ul class="nav">
+
+        <volist name="arr" key="key" id="val">
+            <if condition="$val.id eq $type['id']">
+            <li class="nLi on">
+                <a href="{$val.url}" class="nav_top">
+                    {$val.type}
+                </a>
+                <if condition="$val.erji eq ''">
+
+                    <else/>
+                    <ul class="sub" style="left:auto;right:0">
+                        <volist name="val.erji" id="v">
+                            <li>
+                                <a href="{$v.url}">{$v.type}</a>
+                            </li>
+                        </volist>
+                    </ul>
+                </if>
+            </li>
+                <else/>
+                <li class="nLi">
+                    <a href="{$val.url}" class="nav_top">
+                        {$val.type}
+                    </a>
+                    <if condition="$val.erji eq ''">
+
+                        <else/>
+                        <ul class="sub" style="left:auto;right:0">
+                            <volist name="val.erji" id="v">
+                                <li>
+                                    <a href="{$v.url}">{$v.type}</a>
+                                </li>
+                            </volist>
+                        </ul>
+                    </if>
+                </li>
+            </if>
+        </volist>
+    </ul>
+</div>
+<div class="details_title">
+    <span>您的位置：</span>
+    <a href="__APP__/Index/index">首页</a>
+    <span>></span>
+        <if condition="$info.title eq '高层致辞'">
+            <span>{$type.type}</span>
+        <else/>
+            <if condition="$type.type eq '高层致辞'">
+                <a href="__APP__/Index/newsinfo/id/1"> <span>{$type.type}</span></a>
+                <else/>
+                <span>{$type.type}</span>
+            </if>
+            <span>></span>
+            <span>{$info.title}</span>
+        </if>
+</div>
+<div class="details_con">
+    <div class="title">
+        <i>{$info.title}</i>
+    </div>
+    <div class="con">
+       {$info.info}
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="bot">
+    <a href="__APP__/Index/baogao#Map">历年环保报告下载</a>
+</div>
+<a href="#" id="return-top">
+    <img src="__PUBLIC__/images/copy.png" width="81" height="474" alt="PAGE TOP 京ICP备05023886号 Copyright © 2015 Honda Motor (China) Investment Co., Ltd. All Rights Reserved. ">
+</a>
+<div id="main_nav">
+    <div id="nav_con" style="top: 0px; margin-top: 60px;">
+        <ul id="navchange">
+            <li style="height:41px" class="mainlevel">
+                <a href="http://www.honda.com.cn/funtec/"><img cimg="http://www.honda.com.cn/images/mainnav/funtec.jpg" simg="http://www.honda.com.cn/images/mainnav/funtec.jpg" src="http://www.honda.com.cn/images/mainnav/funtec.jpg"></a>
+            </li>
+            <li class="mainlevel">
+                <a href="http://www.honda.com.cn/corporate/technology/auto/"><img cimg="http://www.honda.com.cn/images/mainnav/a1_0_on.png" simg="http://www.honda.com.cn/images/mainnav/a1_0_off.png" src="http://www.honda.com.cn/images/mainnav/a1_0_off.png"></a>
+                <ul id="nav_a2" style="display: none;">
+                    <li><a href="http://www.honda.com.cn/corporate/technology/auto/"><span>汽车技术</span></a></li>
+                    <li><a href="http://www.honda.com.cn/corporate/technology/motor/"><span>摩托车技术</span></a></li>
+                    <li><a href="http://www.honda.com.cn/corporate/technology/power/"><span>通用产品技术</span></a></li>
+                    <li><a href="http://www.honda.com.cn/corporate/technology/futuretech/"><span>新领域技术</span></a></li>
+                </ul>
+            </li>
+            <li class="mainlevel">
+                <a style="cursor: default;" href="javascript:;"><img cimg="http://www.honda.com.cn/images/mainnav/b1_0_on.png" src="http://www.honda.com.cn/images/mainnav/b1_0_off.png"></a>
+                <ul style="display: none;" id="nav_b2">
+                    <li class="navlv2">
+                        <a href="http://www.honda.com.cn/product/auto/" onclick="recordOutboundLink('/product/auto/', 'side_menu_click', 'INTERNAL')"><img cimg="http://www.honda.com.cn/images/img/b2_1_on.png" src="http://www.honda.com.cn/images/img/b2_1_off.png"></a>
+                        <ul style="*top:-4px">
+                            <p>混合动力车</p>
+                            <li><a href="http://www.honda.com.cn/product/auto/crz/" onclick="recordOutboundLink('/product/auto/crz/', 'side_menu_click', 'INTERNAL')"><span>Honda CR-Z</span></a>
+                                <ul class="nav_pic">
+                                    <li>
+                                        <a href="http://www.honda.com.cn/product/auto/crz/"><img width="276" height="134" src="http://www.honda.com.cn/images/product/car/carpic/small/crz.jpg"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="http://www.honda.com.cn/product/auto/fithybird/" onclick="recordOutboundLink('/product/auto/fithybird/', 'side_menu_click', 'INTERNAL')"><span>FIT HYBRID</span></a>
+                                <ul class="nav_pic">
+                                    <li>
+                                        <a href="http://www.honda.com.cn/product/auto/fithybird/"><img width="276" height="134" src="http://www.honda.com.cn/images/product/car/carpic/small/fit-hybrid.jpg"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="http://www.honda.com.cn/product/auto/insight/" onclick="recordOutboundLink('/product/auto/insight/', 'side_menu_click', 'INTERNAL')"><span>INSIGHT</span></a>
+                                <ul class="nav_pic">
+                                    <li>
+                                        <a href="http://www.honda.com.cn/product/auto/insight/"><img width="276" height="134" src="http://www.honda.com.cn/images/product/car/carpic/small/insight.jpg"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <p>轿车</p>
+                            <li><a href="http://www.honda.com.cn/product/auto/crosstour/" onclick="recordOutboundLink('/product/auto/crosstour/', 'side_menu_click', 'INTERNAL')"><span>Crosstour 歌诗图</span></a>
+                                <ul class="nav_pic">
+                                    <li>
+                                        <a href="http://www.honda.com.cn/product/auto/crosstour/"><img width="276" height="134" src="http://www.honda.com.cn/images/product/car/carpic/small/crosstour.jpg"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="http://www.honda.com.cn/product/auto/accord/" onclick="recordOutboundLink('/product/auto/accord/', 'side_menu_click', 'INTERNAL')"><span>Accord 雅阁</span></a>
+                                <ul class="nav_pic">
+                                    <li>
+                                        <a href="http://www.honda.com.cn/product/auto/accord/"><img width="276" height="134" src="http://www.honda.com.cn/images/product/car/carpic/small/accord.jpg"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="http://www.honda.com.cn/product/auto/spirior/" onclick="recordOutboundLink('/product/auto/spirior/', 'side_menu_click', 'INTERNAL')"><span>SPIRIOR 思铂睿</span></a>
+                                <ul class="nav_pic">
+                                    <li>
+                                        <a href="http://www.honda.com.cn/product/auto/spirior/"><img width="276" height="134" src="http://www.honda.com.cn/images/product/car/carpic/small/spirior.jpg"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="http://www.honda.com.cn/product/auto/civic/" onclick="recordOutboundLink('/product/auto/civic/', 'side_menu_click', 'INTERNAL')"><span>CIVIC 思域</span></a>
+                                <ul class="nav_pic">
+                                    <li>
+                                        <a href="http://www.honda.com.cn/product/auto/civic/"><img width="276" height="134" src="http://www.honda.com.cn/images/product/car/carpic/small/civic.jpg"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="http://www.honda.com.cn/product/auto/city/" onclick="recordOutboundLink('/product/auto/city/', 'side_menu_click', 'INTERNAL')"><span>CITY 锋范</span></a>
+                                <ul class="nav_pic">
+                                    <li>
+                                        <a href="http://www.honda.com.cn/product/auto/city/"><img width="276" height="134" src="http://www.honda.com.cn/images/product/car/carpic/small/city.jpg"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="http://www.honda.com.cn/product/auto/fit/" onclick="recordOutboundLink('/product/auto/fit/', 'side_menu_click', 'INTERNAL')"><span>FIT 飞度</span></a>
+                                <ul class="nav_pic">
+                                    <li>
+                                        <a href="http://www.honda.com.cn/product/auto/fit/"><img width="276" height="134" src="http://www.honda.com.cn/images/product/car/carpic/small/fit.jpg"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="http://www.honda.com.cn/product/auto/crider/" onclick="recordOutboundLink('/product/auto/crider/', 'side_menu_click', 'INTERNAL')"><span>CRIDER 凌派</span></a>
+                                <ul class="nav_pic">
+                                    <li>
+                                        <a href="http://www.honda.com.cn/product/auto/crider/"><img width="276" height="134" src="http://www.honda.com.cn/images/product/car/carpic/small/crider.jpg"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="http://www.honda.com.cn/product/auto/jade/" onclick="recordOutboundLink('/product/auto/jade/', 'side_menu_click', 'INTERNAL')"><span>JADE 杰德</span></a>
+                                <ul class="nav_pic">
+                                    <li>
+                                        <a href="http://www.honda.com.cn/product/auto/jade/"><img width="276" height="134" src="http://www.honda.com.cn/images/product/car/carpic/small/jade.jpg"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <p>SUV</p>
+                            <li><a href="http://www.honda.com.cn/product/auto/crv/" onclick="recordOutboundLink('/product/auto/crv/', 'side_menu_click', 'INTERNAL')"><span>CR-V</span></a>
+                                <ul class="nav_pic">
+                                    <li>
+                                        <a href="http://www.honda.com.cn/product/auto/crv/"><img width="276" height="134" src="http://www.honda.com.cn/images/product/car/carpic/small/crv.jpg"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="http://www.honda.com.cn/product/auto/vezel/" onclick="recordOutboundLink('/product/auto/vezel/', 'side_menu_click', 'INTERNAL')"><span>缤智VEZEL</span></a>
+                                <ul class="nav_pic">
+                                    <li>
+                                        <a href="http://www.honda.com.cn/product/auto/vezel/"><img width="276" height="134" src="http://www.honda.com.cn/images/product/car/carpic/small/vezel.jpg"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="http://www.honda.com.cn/product/auto/xr-v/" onclick="recordOutboundLink('/product/auto/xr-v/', 'side_menu_click', 'INTERNAL')"><span>XR-V</span></a>
+                                <ul class="nav_pic">
+                                    <li>
+                                        <a href="http://www.honda.com.cn/product/auto/xr-v/"><img width="276" height="134" src="http://www.honda.com.cn/images/product/car/carpic/small/xrv.jpg"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <p>MPV</p>
+                            <li><a href="http://www.honda.com.cn/product/auto/elysion/" onclick="recordOutboundLink('/product/auto/elysion/', 'side_menu_click', 'INTERNAL')"><span>ELYSION 艾力绅</span></a>
+                                <ul class="nav_pic">
+                                    <li>
+                                        <a href="http://www.honda.com.cn/product/auto/elysion/"><img width="276" height="134" src="http://www.honda.com.cn/images/product/car/carpic/small/elysion.jpg"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="http://www.honda.com.cn/product/auto/odyssey/" onclick="recordOutboundLink('/product/auto/odyssey/', 'side_menu_click', 'INTERNAL')"><span>ODYSSEY 奥德赛</span></a>
+                                <ul class="nav_pic">
+                                    <li>
+                                        <a href="http://www.honda.com.cn/product/auto/odyssey/"><img width="276" height="134" src="http://www.honda.com.cn/images/product/car/carpic/small/odyssey.jpg"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="navlv2">
+                        <a href="http://www.honda.com.cn/product/motor/" onclick="recordOutboundLink('/product/motor/', 'side_menu_click', 'INTERNAL')"><img cimg="http://www.honda.com.cn/images/img/b2_2_on.png" src="http://www.honda.com.cn/images/img/b2_2_off.png"></a>
+                        <ul style="display: none;">
+                            <p><a target="_bank" style="display:inline;padding-left:0px;" href="http://www.honda-dreamwing.com.cn/" onclick="recordOutboundLink('http://www.honda-dreamwing.com.cn/', 'side_menu_click', 'INTERNAL')">进口车</a></p>
+                            <p><a style="display:inline;padding-left:0px;" href="http://www.honda.com.cn/product/motor/#rightnav2" onclick="recordOutboundLink('/product/motor/#rightnav2', 'side_menu_click', 'INTERNAL')">跨骑车</a></p>
+                            <p><a style="display:inline;padding-left:0px;" href="http://www.honda.com.cn/product/motor/#rightnav3" onclick="recordOutboundLink('/product/motor/#rightnav3', 'side_menu_click', 'INTERNAL')">踏板车</a></p>
+                            <p><a style="display:inline;padding-left:0px;" href="http://www.honda.com.cn/product/motor/#rightnav4" onclick="recordOutboundLink('/product/motor/#rightnav4', 'side_menu_click', 'INTERNAL')">弯梁车</a></p>
+                            <p><a style="display:inline;padding-left:0px;" href="http://www.honda.com.cn/product/motor/#rightnav5" onclick="recordOutboundLink('/product/motor/#rightnav5', 'side_menu_click', 'INTERNAL')">电动车</a></p>
+                            <p><a style="display:inline;padding-left:0px;" href="http://www.honda.com.cn/product/motor/#rightnav6" onclick="recordOutboundLink('/product/motor/#rightnav6', 'side_menu_click', 'INTERNAL')">摩托车历史博物馆</a></p>
+                        </ul>
+                    </li>
+                    <li class="navlv2">
+                        <a href="http://www.honda.com.cn/product/power/" onclick="recordOutboundLink('/product/power/', 'side_menu_click', 'INTERNAL')"><img cimg="http://www.honda.com.cn/images/img/b2_3_on.png" src="http://www.honda.com.cn/images/img/b2_3_off.png"></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="mainlevel">
+                <a href="http://www.honda.com.cn/philanthropy/"><img cimg="http://www.honda.com.cn/images/mainnav/c1_0_on.png" src="http://www.honda.com.cn/images/mainnav/c1_0_off.png"></a>
+                <ul id="nav_c2" style="display: none;">
+                    <li><a target="_blank" href="http://www.honda.com.cn/philanthropy/sustainability_report/" onclick="recordOutboundLink('philanthropy/sustainability_report/', 'side_menu_click', 'INTERNAL')"><span>可持续发展报告</span></a></li>
+                    <li><a href="http://www.honda.com.cn/philanthropy/china/eco/" onclick="recordOutboundLink('/philanthropy/china/eco/', 'side_menu_click', 'INTERNAL')"><span>中国环保活动</span></a></li>
+                    <li><a href="http://www.honda.com.cn/philanthropy/welfare/nboxplus/" onclick="recordOutboundLink('/philanthropy/welfare/nboxplus/', 'side_menu_click', 'INTERNAL')"><span>Honda福祉车</span></a></li>
+                </ul>
+            </li>
+            <li class="mainlevel">
+                <a href="http://www.honda.com.cn/motorsports/"><img cimg="http://www.honda.com.cn/images/mainnav/d1_0_on.png" src="http://www.honda.com.cn/images/mainnav/d1_0_off.png"></a>
+                <ul id="nav_d2" style="display: none;">
+                    <li><a href="http://www.honda.com.cn/motorsports/auto_racing" onclick="recordOutboundLink('/motorsports/auto_racing/', 'side_menu_click', 'INTERNAL')"><span>汽车类赛事</span></a></li>
+                    <li><a href="http://www.honda.com.cn/motorsports/motor_racing" onclick="recordOutboundLink('/motorsports/motor_racing', 'side_menu_click', 'INTERNAL')"><span>摩托车类赛事</span></a></li>
+                    <li><a href="http://www.honda.com.cn/corporate/emc/" onclick="recordOutboundLink('/corporate/emc/', 'side_menu_click', 'INTERNAL')"><span>Honda中国节能竞技大赛</span></a></li>
+                </ul>
+            </li>
+            <li class="mainlevel">
+                <a style="cursor: default;" href="javascript:;"><img cimg="http://www.honda.com.cn/images/mainnav/e1_0_on.png" src="http://www.honda.com.cn/images/mainnav/e1_0_off.png"></a>
+                <ul id="nav_e2" style="display: none;">
+                    <li><a href="javascript:;"><span>公司概要</span></a>
+                        <ul style="top:-20px;">
+                            <li style="z-index: 9999;"><a href="http://www.honda.com.cn/corporate/profile/global/profile/" onclick="recordOutboundLink('/corporate/profile/china/#rn2', 'side_menu_click', 'INTERNAL')"><span>Honda在全球</span></a></li>
+                            <li style="padding-right: 0px;"><a href="http://www.honda.com.cn/corporate/profile/china/" onclick="recordOutboundLink('/corporate/profile/china/', 'side_menu_click', 'INTERNAL')" style="padding-right: 0px;"><span style="padding-right: 0px;">Honda在中国的事业项目</span></a></li>
+                            <li><a href="http://www.honda.com.cn/corporate/profile/china/main/" onclick="recordOutboundLink('/corporate/profile/china/main/', 'side_menu_click', 'INTERNAL')"><span style="padding-right: 15px;">中国区域本部</span></a></li>
+                            <li><a href="http://www.honda.com.cn/corporate/profile/china/auto/" onclick="recordOutboundLink('/corporate/profile/china/auto/', 'side_menu_click', 'INTERNAL')"><span style="padding-right: 15px;">汽车领域 </span></a></li>
+                            <li><a href="http://www.honda.com.cn/corporate/profile/china/motor/" onclick="recordOutboundLink('/corporate/profile/china/motor/', 'side_menu_click', 'INTERNAL')"><span style="padding-right: 15px;">摩托车领域 </span></a></li>
+                            <li><a href="http://www.honda.com.cn/corporate/profile/china/power/" onclick="recordOutboundLink('/corporate/profile/china/power/', 'side_menu_click', 'INTERNAL')"><span style="padding-right: 15px;">通用领域 </span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="http://www.honda.com.cn/corporate/news/2014/" onclick="recordOutboundLink('/corporate/news/2014/', 'side_menu_click', 'INTERNAL')"><span>新闻</span></a></li>
+                    <li><a href="http://www.honda.com.cn/corporate/brand/" onclick="recordOutboundLink('/corporate/brand/', 'side_menu_click', 'INTERNAL')"><span>品牌社区</span></a></li>
+                    <li><a href="http://www.honda.com.cn/corporate/motorshow/" onclick="recordOutboundLink('/corporate/motorshow/', 'side_menu_click', 'INTERNAL')"><span>车展</span></a></li>
+                    <li><a href="javascript:;"><span>知识产权</span></a>
+                        <ul style="top:-86px;">
+                            <li style="z-index: 9999;"><a href="http://www.honda.com.cn/corporate/property/introduction/" onclick="recordOutboundLink('/corporate/property/introduction/', 'side_menu_click', 'INTERNAL')"><span>知识产权介绍</span></a></li>
+                            <li style="z-index: 9999;"><a href="http://www.honda.com.cn/corporate/property/license/" onclick="recordOutboundLink('/corporate/property/license/', 'side_menu_click', 'INTERNAL')"><span>知识产权许可使用介绍</span></a></li>
+                            <li style="z-index: 9999;"><a href="http://www.honda.com.cn/corporate/property/case/" onclick="recordOutboundLink('/corporate/property/case/', 'side_menu_click', 'INTERNAL')"><span>相关部门保护知识产权业绩</span></a></li>
+                            <li style="z-index: 9999;"><a href="http://www.honda.com.cn/corporate/property/example/" onclick="recordOutboundLink('/corporate/property/example/', 'side_menu_click', 'INTERNAL')"><span>参考查处案例</span></a></li>
+                            <li style="z-index: 9999;"><a href="http://www.honda.com.cn/corporate/property/document/" onclick="recordOutboundLink('/corporate/property/document/', 'side_menu_click', 'INTERNAL')"><span>知识产权相关文书</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="http://www.honda.com.cn/corporate/recruit/" onclick="recordOutboundLink('/corporate/recruit/', 'side_menu_click', 'INTERNAL')"><span>人才招聘</span></a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="nav_weibo">
+            <a target="_blank" href="http://www.honda.com.cn/pr/"><img src="http://www.honda.com.cn/images/mainnav/center_02.png" class="png"></a>
+            <div class="HSpace_nbg_10"></div>
+            <div id="weibo">
+                <a target="_blank" href="http://e.weibo.com/hondamotorchina" onclick="recordOutboundLink('http://e.weibo.com/hondamotorchina', 'outbound_links', 'WEIBO')"><img src="http://www.honda.com.cn/images/mainnav/weibo.png"></a>
+            </div>
+            <img src="http://www.honda.com.cn/images/mainnav/weixin.png"></div>
+    </div>
+</div>
+<div class="footer_fff" id="footer" style="width: 100%; bottom: 0;">
+    <ul style="margin-left:72px" class="fl left">
+        <li><a href="http://www.honda.com.cn/map/">站点地图</a></li>
+        <li><a href="http://www.honda.com.cn/corporate/contact/customer/">联系我们</a></li>
+        <li><a href="http://www.honda.com.cn/notes/">使用须知 </a></li>
+        <li class="select_js png">全球Honda
+            <ul style="opacity: 0.8; display: none; bottom: 18px;">
+                <li onclick="recordOutboundLink('http://www.honda.co.jp/', 'outbound_links', 'HM','_blank');return false;" href="http://www.honda.co.jp/">日本Honda</li>
+                <li onclick="recordOutboundLink('http://www.honda.com/', 'outbound_links', 'USAHONDA','_blank');return false;" href="http://www.honda.com/">美国Honda</li>
+                <li onclick="recordOutboundLink('http://www.honda-eu.com/', 'outbound_links', 'EUHONDA','_blank');return false;" href="http://www.honda-eu.com/">欧洲Honda</li>
+                <li onclick="recordOutboundLink('http://world.honda.com/', 'outbound_links', 'GLOBAL','_blank');return false;" href="http://world.honda.com/">全球Honda</li>
+            </ul>
+        </li>
+        <li class="select_js png">Honda在华企业
+            <ul id="select2" style="opacity: 0.8; display: none; bottom: 18px;">
+                <li onclick="recordOutboundLink('http://www.ghac.cn/', 'outbound_links', 'GHAC','_blank');return false;" href="http://www.ghac.cn/">广汽本田汽车有限公司</li>
+                <li onclick="recordOutboundLink('http://www.wdhac.com.cn/', 'outbound_links', 'WDHAC','_blank');return false;" href="http://www.wdhac.com.cn/">东风本田汽车有限公司</li>
+                <li onclick="recordOutboundLink('http://www.dhec.com.cn/', 'outbound_links', 'DHEC','_blank');return false;" href="http://www.dhec.com.cn/">东风本田发动机有限公司</li>
+                <li onclick="recordOutboundLink('http://www.wuyang-honda.com/', 'outbound_links', 'WHM','_blank');return false;" href="http://www.wuyang-honda.com/">五羊-本田摩托(广州)有限公司</li>
+                <li onclick="recordOutboundLink('http://www.honda-sundiro.com/', 'outbound_links', 'SDH','_blank');return false;" href="http://www.honda-sundiro.com/">新大洲本田摩托有限公司</li>
+                <li onclick="recordOutboundLink('http://www.honda-mindong.com/', 'outbound_links', 'FMH','_blank');return false;" href="http://www.honda-mindong.com/">福建闽东本田发电机组有限公司</li>
+                <li onclick="recordOutboundLink('http://www.jlhonda.com/', 'outbound_links', 'JLH','_blank');return false;" href="http://www.jlhonda.com/">嘉陵-本田发动机有限公司</li>
+                <li onclick="recordOutboundLink('http://www.chamhonda.cn/', 'outbound_links', 'CHAM','_blank');return false;" href="http://www.chamhonda.cn/">本田汽车零部件制造有限公司</li>
+                <li onclick="recordOutboundLink('http://www.honda-access.cn', 'outbound_links', 'ACCESS','_blank');return false;" href="http://www.honda-access.cn">本田汽车用品（广东）有限公司</li>
+            </ul>
+        </li>
+    </ul>
+    <p class="fr copyf" style="clear: none;">Copyright (c) 2014 Honda Motor (China) Investment Co., Ltd. All Rights Reserved.<span>京ICP备05023886号</span></p>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        //设置主导航默认显示
+        $("#navchange li.mainlevel").each(function(){
+            var _src = $(this).find('img:first').attr('src');
+            $(this).find('img:first').attr('simg',_src);
+        })
+        $("#navchange li.mainlevel").hover(function(){
+            var _this = $(this);
+            var _src = _this.find('img:first').attr('simg');
+            var _cimg = _this.find('img:first').attr('cimg');
+            _this.find('img:first').attr({'src':_cimg})
+            _this.find("ul:first").show();
+        },function(){
+            var _this = $(this);
+            var _src = _this.find('img:first').attr('simg');
+            var _cimg = _this.find('img:first').attr('cimg');
+            _this.find('img:first').attr({'src':_src})
+            _this.find("ul:first").hide();
+        })
+
+
+
+        $("#navchange li.mainlevel>ul>li").hover(function(){
+            var _this = $(this);
+            _this.find("ul:first").show();
+        },function(){
+            var _this = $(this);
+            _this.find("ul:first").hide();
+        })
+        $("#navchange li.mainlevel>ul>li>ul>li").hover(function(){
+            var _this = $(this);
+            _this.find("ul:first").show();
+        },function(){
+            var _this = $(this);
+            _this.find("ul:first").hide();
+        })
+        $('li.select_js').hover(function(){
+            $(this).click(function(){
+                $(this).find("ul:first").show().css("bottom","17px");
+            })
+        },function(){
+            $(this).find("ul:first").hide();
+        })
+        $('li.select_js li').hover(function(){
+            $(this).css({
+                color: "#fff",
+                background: "#e50020"
+            })
+        },function(){
+            $(this).css({
+                color: "#9FA3A4",
+                background: "none"
+            })
+        })
+    </script>
+</div>
+<a href="javascript:;" id="return-top">
+    <img src="__PUBLIC__/images/copy.png" width="81" height="474" alt="PAGE TOP 京ICP备05023886号 Copyright © 2015 Honda Motor (China) Investment Co., Ltd. All Rights Reserved. ">
+</a>
+<script src="__PUBLIC__/js/jquery.SuperSlide.js" type="text/javascript" charset="utf-8"></script>
+<script src="__PUBLIC__/js/index.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#nav > .nav > .nLi:last-child").find(".sub").css({
+			left : "auto",
+			right : 0
+		})
+		$("#nav > .nav > .nLi").each(function(){
+			if($(this).find(".sub")){
+				var datahref = $(this).find(".sub").find("li").eq(0).find("a").attr("href");
+				$(this).find(".nav_top").attr("href",datahref);
+			}
+		})
+	})
+</script>
+</body>
+</html>
